@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Glances
+# Runs the nginx daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+hass.log.info 'Starting the NGINX daemon'
+
+# Wait for Glances to become available
+s6-svwait -u -t 5000 /var/run/s6/services/glances
+
+# Disable HA Authentication if front door is open
+if hass.config.true 'leave_front_door_open'; then
+    export DISABLE_HA_AUTHENTICATION=true
+fi
+
+if hass.config.true 'ssl'; then
+    exec nginx -c /etc/nginx/nginx-ssl.conf
+else
+    exec nginx -c /etc/nginx/nginx.conf
+fi

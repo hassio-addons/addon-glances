@@ -1,0 +1,23 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Glances
+# Runs Glances
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+declare -a options
+
+hass.log.info 'Starting Glances'
+
+options+=(-C /etc/glances.conf)
+options+=(-w)
+options+=(--port 61209)
+options+=(--bind 127.0.0.1)
+
+if hass.debug; then
+    options+=(--debug)
+fi
+
+# Run Glances
+exec glances "${options[@]}"

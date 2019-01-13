@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# Community Hass.io Add-ons: Glances
+# This file turns s6-nuke into a NOOP to prevent total termination
+# of the host system since the add-on runs in the same PID namespace.
+# ==============================================================================
+echo "S6-NUKE: NOOP"
+exit 0
