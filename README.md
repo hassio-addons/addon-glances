@@ -71,7 +71,7 @@ Example add-on configuration:
     "username": "glances",
     "password": "!secret glances_influxdb_password",
     "database": "glances",
-    "prefix": "`hostname`",
+    "prefix": "localhost",
     "interval": 60
   }
 }
