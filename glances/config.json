@@ -39,7 +39,7 @@
       "username": "glances",
       "password": "",
       "database": "glances",
-      "prefix": "`hostname`",
+      "prefix": "localhost",
       "interval": 60
     }
   },
