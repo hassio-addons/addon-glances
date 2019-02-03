@@ -39,6 +39,7 @@
       "username": "glances",
       "password": "",
       "database": "glances",
+      "prefix": "`hostname`",
       "interval": 60
     }
   },
@@ -54,6 +55,7 @@
       "username": "str",
       "password": "str",
       "database": "str",
+      "prefix": "str",
       "interval": "int"
     },
     "leave_front_door_open": "bool?"
