@@ -71,6 +71,7 @@ Example add-on configuration:
     "username": "glances",
     "password": "!secret glances_influxdb_password",
     "database": "glances",
+    "prefix": "`hostname`",
     "interval": 60
   }
 }
@@ -147,6 +148,10 @@ The password for the above username option.
 #### Option `influxdb`: `database`
 
 The name of the database to store all Glances information into.
+
+#### Option `prefix`: `\`hostname\``
+
+This add's the hostname dynamically using the system command for exported data.
 
 **Note**: _It is strongly recommended to create a separate database for glances
 and not store this in the same database name as Home Assistant._
