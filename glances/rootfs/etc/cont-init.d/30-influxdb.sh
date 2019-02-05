@@ -18,4 +18,5 @@ fi
     echo "user=$(hass.config.get 'influxdb.username')"
     echo "password=$(hass.config.get 'influxdb.password')"
     echo "db=$(hass.config.get 'influxdb.database')"
+    echo "prefix=$(hass.config.get 'influxdb.prefix')"
 } >> /etc/glances.conf
