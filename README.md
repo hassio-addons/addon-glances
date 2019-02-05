@@ -177,6 +177,32 @@ panel_iframe:
     url: http://hassio.local:61208
 ```
 
+## Adding Glances as a sensor into Home Assistant
+
+The Home Assistant Glances sensor platform is consuming the system information
+provided by the Glances API.
+
+This enables one to track and display their stats in Home Assistant,
+and even build automations based on that data.
+
+```yaml
+sensor:
+  - platform: glances
+    host: 127.0.0.1
+    username: YOUR_GLANCES_USERNAME
+    password: YOUR_GLANCES_PASSWORD
+    version: 3
+    resources:
+      - 'processor_load'
+      - 'memory_use_percent'
+      - 'disk_use_percent'
+```
+
+More information about the Glances sensor platform can be found in the
+Home Assistant documentation:
+
+<https://www.home-assistant.io/components/sensor.glances/>
+
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
