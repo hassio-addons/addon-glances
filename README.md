@@ -149,12 +149,14 @@ The password for the above username option.
 
 The name of the database to store all Glances information into.
 
-#### Option `prefix`: `localhost`
-
-The hostname to append for exported data **Note for the Grafana Glances dashboard set this to localhost.
-
 **Note**: _It is strongly recommended to create a separate database for glances
 and not store this in the same database name as Home Assistant._
+
+#### Option `prefix`: `localhost`
+
+The hostname to append for exported data.
+
+**Note**: _For the Grafana Glances dashboard set this to `localhost`._
 
 #### Option `influxdb`: `interval`
 
