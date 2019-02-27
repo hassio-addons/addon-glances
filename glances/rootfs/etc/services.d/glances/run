@@ -14,6 +14,7 @@ options+=(-C /etc/glances.conf)
 options+=(-w)
 options+=(--port 61209)
 options+=(--bind 127.0.0.1)
+options+=(--time "$(hass.config.get 'refresh_time')")
 
 if hass.config.false 'process_info'; then
     options+=(--disable-process)

@@ -62,6 +62,7 @@ Example add-on configuration:
 {
   "log_level": "info",
   "process_info": false,
+  "refresh_time": 10,
   "ssl": false,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem",
@@ -104,6 +105,12 @@ If set to `true`, it will enable the process module of Glances and gives
 detailed insight into each individual process running on the system.
 
 **Note**: _Enabling this feature will increase CPU usage significantly._
+
+### Options: `refresh_time`
+
+Sets refresh time (in seconds).
+
+**Note**: _Refreshing more quickly will result in a higher CPU usage._
 
 ### Option: `ssl`
 

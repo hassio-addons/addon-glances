@@ -30,6 +30,7 @@
   "options": {
     "log_level": "info",
     "process_info": false,
+    "refresh_time": 10,
     "ssl": false,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
@@ -47,6 +48,7 @@
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
     "process_info": "bool",
+    "refresh_time": "int",
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
