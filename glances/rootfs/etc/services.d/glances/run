@@ -15,6 +15,10 @@ options+=(-w)
 options+=(--port 61209)
 options+=(--bind 127.0.0.1)
 
+if hass.config.false 'process_info'; then
+    options+=(--disable-process)
+fi
+
 if hass.debug; then
     options+=(--debug)
 fi

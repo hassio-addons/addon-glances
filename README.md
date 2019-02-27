@@ -61,6 +61,7 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
+  "process_info": false,
   "ssl": false,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem",
@@ -96,6 +97,13 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `process_info`
+
+If set to `true`, it will enable the process module of Glances and gives
+detailed insight into each individual process running on the system.
+
+**Note**: _Enabling this feature will increase CPU usage significantly._
 
 ### Option: `ssl`
 
