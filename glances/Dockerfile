@@ -41,12 +41,12 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="Glances" \
-    io.hass.description="Lorem ipsum" \
+    io.hass.description="A cross-platform system monitoring tool" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Lorem ipsum" \
+    org.label-schema.description="A cross-platform system monitoring tool" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Glances" \
     org.label-schema.schema-version="1.0" \
