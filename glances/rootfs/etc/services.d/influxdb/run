@@ -13,6 +13,12 @@ options+=(-C /etc/glances.conf)
 options+=(--export influxdb)
 options+=(--quiet)
 
+options+=(--time "$(bashio::config 'refresh_time')")
+
+if bashio::config.false 'process_info'; then
+    options+=(--disable-process)
+fi
+
 if bashio::debug; then
     options+=(--debug)
 fi
