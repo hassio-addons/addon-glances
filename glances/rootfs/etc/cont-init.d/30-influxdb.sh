@@ -4,7 +4,7 @@
 # Export Glances data to InfluxDB
 # ==============================================================================
 if bashio::config.false 'influxdb.enabled'; then
-    exit "${EX_OK}"
+    exit 0
 fi
 
 # Modify the configuration
