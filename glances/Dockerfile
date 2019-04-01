@@ -22,7 +22,7 @@ RUN \
         nginx-mod-http-lua=1.14.2-r0 \
         nginx=1.14.2-r0 \
         py3-bottle=0.12.13-r2 \
-        py3-psutil=5.4.6-r0 \
+        py3-psutil=5.5.0-r0 \
         python3=3.6.8-r1 \
     \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
