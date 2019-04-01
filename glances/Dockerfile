@@ -12,10 +12,10 @@ COPY requirements.txt /tmp/
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.1-r0 \
-        python3-dev=3.6.6-r0 \
         gcc=8.2.0-r2 \
         linux-headers=4.18.13-r1 \
         musl-dev=1.1.20-r4 \
+        python3-dev=3.6.8-r1 \
     \
     && apk add --no-cache \
         lua-resty-http=0.12-r1 \
@@ -23,7 +23,7 @@ RUN \
         nginx=1.14.2-r0 \
         py3-bottle=0.12.13-r2 \
         py3-psutil=5.4.6-r0 \
-        python3=3.6.6-r0 \
+        python3=3.6.8-r1 \
     \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
