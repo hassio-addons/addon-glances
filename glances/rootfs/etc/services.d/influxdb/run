@@ -1,14 +1,11 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Glances
 # Runs Glances InfluxDB Export
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare -a options
 
-if hass.config.false 'influxdb.enabled'; then
+if bashio::config.false 'influxdb.enabled'; then
     exec sleep 86400
 fi
 
@@ -16,12 +13,12 @@ options+=(-C /etc/glances.conf)
 options+=(--export influxdb)
 options+=(--quiet)
 
-if hass.debug; then
+if bashio::debug; then
     options+=(--debug)
 fi
 
 # Interval
-sleep "$(hass.config.get 'influxdb.interval')"
+sleep "$(bashio::config 'influxdb.interval')"
 
 # Run Glances
 exec glances "${options[@]}"
