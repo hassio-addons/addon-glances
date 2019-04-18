@@ -8,8 +8,8 @@ variables:
 
   ADDON_LEGACY_TAGS: "true"
 
-  ADDON_AARCH64_base-python: "hassioaddons/base-aarch64:1.1.0"
-  ADDON_AMD64_base-python: "hassioaddons/base-amd64:1.1.0"
-  ADDON_ARMHF_base-python: "hassioaddons/base-armhf:1.1.0"
-  ADDON_ARMV7_base-python: "hassioaddons/base-armv7:1.1.0"
-  ADDON_I386_base-python: "hassioaddons/base-i386:1.1.0"
+  ADDON_AARCH64_base-python: "hassioaddons/base-python-aarch64:1.1.0"
+  ADDON_AMD64_base-python: "hassioaddons/base-python-amd64:1.1.0"
+  ADDON_ARMHF_base-python: "hassioaddons/base-python-armhf:1.1.0"
+  ADDON_ARMV7_base-python: "hassioaddons/base-python-armv7:1.1.0"
+  ADDON_I386_base-python: "hassioaddons/base-python-i386:1.1.0"
