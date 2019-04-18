@@ -12,7 +12,7 @@ COPY requirements.txt /tmp/
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.1-r0 \
-        gcc=8.2.0-r2 \
+        gcc=8.3.0-r0 \
         linux-headers=4.18.13-r1 \
         musl-dev=1.1.20-r4 \
     \
