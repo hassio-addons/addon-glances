@@ -3,18 +3,15 @@
 # Community Hass.io Add-ons: Glances
 # Runs the nginx daemon
 # ==============================================================================
-bashio::log.info 'Starting the NGINX daemon...'
 
 # Wait for Glances to become available
-s6-svwait -u -t 5000 /var/run/s6/services/glances
+bashio::net.wait_for 61209
+
+bashio::log.info "Starting NGinx..."
 
 # Disable HA Authentication if front door is open
 if bashio::config.true 'leave_front_door_open'; then
     export DISABLE_HA_AUTHENTICATION=true
 fi
 
-if bashio::config.true 'ssl'; then
-    exec nginx -c /etc/nginx/nginx-ssl.conf
-else
-    exec nginx -c /etc/nginx/nginx.conf
-fi
+exec nginx

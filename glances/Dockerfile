@@ -29,6 +29,7 @@ RUN \
         -exec rm -rf '{}' + \
     \
     && apk del --purge .build-dependencies \
+    && rm -f -r /etc/nginx
 
 # Copy root filesystem
 COPY rootfs /
