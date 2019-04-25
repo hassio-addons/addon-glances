@@ -173,23 +173,6 @@ The hostname to append for exported data.
 
 Defines the interval (in seconds) on how often Glances exports data to InfluxDB.
 
-## Embedding into Home Assistant
-
-It is possible to embed Glances directly into Home Assistant, allowing
-you to access Glances through the Home Assistant frontend.
-
-Home Assistant provides the `panel_iframe` component, for these purposes.
-
-Example configuration:
-
-```yaml
-panel_iframe:
-  glances:
-    title: Glances
-    icon: mdi:speedometer
-    url: http://hassio.local:61208
-```
-
 ## Adding Glances as a sensor into Home Assistant
 
 The Home Assistant Glances sensor platform is consuming the system information
