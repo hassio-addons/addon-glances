@@ -19,7 +19,7 @@ RUN \
     && apk add --no-cache \
         lua-resty-http=0.13-r0 \
         nginx-mod-http-lua=1.14.2-r0 \
-        nginx=1.14.2-r0 \
+        nginx=1.14.2-r1 \
     \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
