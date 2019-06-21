@@ -1,5 +1,5 @@
 bottle==0.12.16
-docker==3.7.2
+docker==3.7.3
 glances==3.1.0
 influxdb==5.2.2
 netifaces==0.10.9
