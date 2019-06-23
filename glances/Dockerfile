@@ -13,8 +13,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.1-r0 \
         gcc=8.3.0-r0 \
-        musl-dev=1.1.20-r4 \
         linux-headers=4.19.36-r0 \
+        musl-dev=1.1.22-r2 \
     \
     && apk add --no-cache \
         lua-resty-http=0.13-r0 \
