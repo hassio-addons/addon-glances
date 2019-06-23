@@ -9,6 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY requirements.txt /tmp/
 
 # Setup base
+ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.1-r0 \
@@ -23,7 +24,11 @@ RUN \
         nginx=1.16.0-r2 \
         python3=3.7.3-r0 \
     \
-    && pip3 install --no-cache-dir -r /tmp/requirements.txt \
+    && pip3 install \
+        --no-cache-dir \
+        --prefer-binary \
+        --find-links "https://wheels.hass.io/alpine-3.10/${BUILD_ARCH}/" \
+        -r /tmp/requirements.txt \
     \
     && find /usr/local \
         \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
@@ -37,7 +42,6 @@ RUN \
 COPY rootfs /
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
