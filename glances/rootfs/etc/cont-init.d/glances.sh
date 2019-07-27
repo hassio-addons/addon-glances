@@ -27,5 +27,6 @@ if bashio::config.true 'influxdb.enabled'; then
         echo "password=$(bashio::config 'influxdb.password')"
         echo "db=$(bashio::config 'influxdb.database')"
         echo "prefix=$(bashio::config 'influxdb.prefix')"
+        echo "protocol=$(bashio::config 'influxdb.protocol')"
     } >> /etc/glances.conf
 fi
