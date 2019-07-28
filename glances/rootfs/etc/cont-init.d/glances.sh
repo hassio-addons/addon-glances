@@ -19,10 +19,9 @@ fi
 
 # Export Glances data to InfluxDB
 if bashio::config.true 'influxdb.enabled'; then
+    protocol='http'
     if bashio::config.true 'influxdb.ssl'; then
     protocol='https'
-    else
-    protocol='http'
     fi
     # Modify the configuration
     {
