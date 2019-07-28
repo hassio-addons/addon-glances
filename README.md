@@ -70,7 +70,8 @@ Example add-on configuration:
     "password": "!secret glances_influxdb_password",
     "database": "glances",
     "prefix": "localhost",
-    "interval": 60
+    "interval": 60,
+    "ssl": false
   }
 }
 ```
@@ -172,6 +173,12 @@ The hostname to append for exported data.
 #### Option `influxdb`: `interval`
 
 Defines the interval (in seconds) on how often Glances exports data to InfluxDB.
+
+#### Option `influxdb`: `ssl`
+
+Adding this option will allow SSL to be used on the InfluxDB connection.  If not
+set will default to `false` which is the required setting for the Community
+InfluxDB add-on.
 
 ## Adding Glances as a sensor into Home Assistant
 

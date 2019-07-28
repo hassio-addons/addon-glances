@@ -71,7 +71,8 @@
       "password": "str",
       "database": "str",
       "prefix": "str",
-      "interval": "int"
+      "interval": "int",
+      "ssl": "bool?"
     },
     "leave_front_door_open": "bool?"
   },
