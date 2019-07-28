@@ -53,8 +53,7 @@
       "password": "",
       "database": "glances",
       "prefix": "localhost",
-      "interval": 60,
-      "protocol": "http"
+      "interval": 60
     }
   },
   "schema": {
@@ -73,7 +72,7 @@
       "database": "str",
       "prefix": "str",
       "interval": "int",
-      "protocol": "match(^(http|https)$)"
+      "ssl": "bool?"
     },
     "leave_front_door_open": "bool?"
   },

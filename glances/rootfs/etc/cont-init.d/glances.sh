@@ -3,6 +3,7 @@
 # Community Hass.io Add-ons: Glances
 # Configures Glances
 # ==============================================================================
+declare protocol
 bashio::require.unprotected
 
 # Ensure the configuration exists
@@ -18,6 +19,11 @@ fi
 
 # Export Glances data to InfluxDB
 if bashio::config.true 'influxdb.enabled'; then
+    if bashio::config.true 'influxdb.ssl'; then
+    protocol='https'
+    else
+    protocol='http'
+    fi
     # Modify the configuration
     {
         echo "[influxdb]"
@@ -27,6 +33,6 @@ if bashio::config.true 'influxdb.enabled'; then
         echo "password=$(bashio::config 'influxdb.password')"
         echo "db=$(bashio::config 'influxdb.database')"
         echo "prefix=$(bashio::config 'influxdb.prefix')"
-        echo "protocol=$(bashio::config 'influxdb.protocol')"
+        echo "protocol=${protocol}"
     } >> /etc/glances.conf
 fi
