@@ -15,7 +15,7 @@ RUN \
         automake=1.16.1-r0 \
         gcc=8.3.0-r0 \
         linux-headers=4.19.36-r0 \
-        musl-dev=1.1.22-r2 \
+        musl-dev=1.1.22-r3 \
         python3-dev=3.7.3-r0 \
     \
     && apk add --no-cache \
