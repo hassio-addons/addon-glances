@@ -192,14 +192,16 @@ and even build automations based on that data.
 sensor:
   - platform: glances
     host: 127.0.0.1
-    username: YOUR_GLANCES_USERNAME
-    password: YOUR_GLANCES_PASSWORD
+    port: 61209
     version: 3
     resources:
       - 'processor_load'
       - 'memory_use_percent'
       - 'disk_use_percent'
 ```
+
+**Note**: _The port of 61209 is important as this is what is used by the
+addon._
 
 More information about the Glances sensor platform can be found in the
 Home Assistant documentation:
