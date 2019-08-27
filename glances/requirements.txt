@@ -1,6 +1,6 @@
 bottle==0.12.17
 docker==4.0.2
-glances==3.1.1
+glances==3.1.2
 influxdb==5.2.2
 netifaces==0.10.9
 paho-mqtt==1.4.0
