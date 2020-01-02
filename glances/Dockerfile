@@ -27,7 +27,7 @@ RUN \
     && pip3 install \
         --no-cache-dir \
         --prefer-binary \
-        --find-links "https://wheels.home-assistant.io/alpine-3.10/${BUILD_ARCH}/" \
+        --find-links "https://wheels.home-assistant.io/alpine-3.11/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && find /usr/local \
