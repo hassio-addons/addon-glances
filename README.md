@@ -38,15 +38,11 @@ at all your system information and its behavior over time.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Glances" add-on.
+1. Search for the "Glances" add-on in the Hass.io add-on store and install it.
 1. Disable "Protection mode" in the add-on panel.
 1. Start the "Glances" add-on.
 1. Check the logs of the "Glances" to see if everything went well.
 1. Click the "OPEN WEB UI" button take a glance at Glances.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 ## Configuration
 
