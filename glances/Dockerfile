@@ -20,8 +20,8 @@ RUN \
     \
     && apk add --no-cache \
         lua-resty-http=0.15-r0 \
-        nginx-mod-http-lua=1.16.1-r1 \
-        nginx=1.16.1-r1 \
+        nginx-mod-http-lua=1.16.1-r4 \
+        nginx=1.16.1-r4 \
         python3=3.8.1-r0 \
     \
     && pip3 install \
