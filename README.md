@@ -199,6 +199,8 @@ sensor:
 **Note**: _The port of 61209 is important as this is what is used by the
 addon._
 
+**Note**: _The integrations panel in Home Assistant now supports importing Glances as well. Once the add-on is running, add the integration with all defaults, except for port, which should be 61209, per the note above._
+
 More information about the Glances sensor platform can be found in the
 Home Assistant documentation:
 
