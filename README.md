@@ -50,26 +50,23 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "process_info": false,
-  "refresh_time": 10,
-  "ssl": false,
-  "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem",
-  "influxdb": {
-    "enabled": false,
-    "host": "a0d7b954-influxdb",
-    "port": 8086,
-    "username": "glances",
-    "password": "!secret glances_influxdb_password",
-    "database": "glances",
-    "prefix": "localhost",
-    "interval": 60,
-    "ssl": false
-  }
-}
+```yaml
+log_level: info
+process_info: false
+refresh_time: 10
+ssl: false
+certfile: fullchain.pem
+keyfile: privkey.pem
+influxdb:
+  enabled: false
+  host: a0d7b954-influxdb
+  port: 8086
+  username: glances
+  password: "!secret glances_influxdb_password"
+  database: glances
+  prefix: localhost
+  interval: 60
+  ssl: false
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
