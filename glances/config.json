@@ -10,26 +10,14 @@
   "panel_icon": "mdi:speedometer",
   "startup": "services",
   "homeassistant": "0.92.0b2",
-  "arch": [
-    "aarch64",
-    "amd64",
-    "armhf",
-    "armv7",
-    "i386"
-  ],
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "ports": {
     "80/tcp": null
   },
   "ports_description": {
-    "80/tcp": "Web interface (Not required for Hass.io Ingress)"
+    "80/tcp": "Web interface (Not required for Ingress)"
   },
-  "map": [
-    "addons",
-    "backup",
-    "config:rw",
-    "share",
-    "ssl"
-  ],
+  "map": ["addons", "backup", "config:rw", "share", "ssl"],
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
@@ -57,7 +45,7 @@
     }
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
     "process_info": "bool",
     "refresh_time": "int",
     "ssl": "bool",
@@ -68,7 +56,7 @@
       "host": "str",
       "port": "port",
       "username": "str",
-      "password": "str",
+      "password": "password",
       "database": "str",
       "prefix": "str",
       "interval": "int",
