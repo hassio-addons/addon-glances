@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: Glances
+# Home Assistant Community Add-on: Glances
 # Configures Glances
 # ==============================================================================
 declare protocol

@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # Configures NGINX for use with ttyd
 # ==============================================================================
 declare port

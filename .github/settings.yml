@@ -1,6 +1,6 @@
 ---
 repository:
-  description: "Glances - Community Home Assistant Add-ons"
+  description: "Glances - Home Assistant Community Add-ons"
   homepage: https://addons.community
   topics: glances, monitoring, system, addon, addons, home-assistant, homeassistant
   private: false
