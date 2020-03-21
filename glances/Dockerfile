@@ -13,7 +13,7 @@ ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.1-r0 \
-        gcc=9.2.0-r3 \
+        gcc=9.2.0-r4 \
         linux-headers=4.19.36-r0 \
         musl-dev=1.1.24-r0 \
         python3-dev=3.8.1-r0 \
