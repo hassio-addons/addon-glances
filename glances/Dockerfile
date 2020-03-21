@@ -35,7 +35,7 @@ RUN \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
         -exec rm -rf '{}' + \
     \
-    && apk del --purge .build-dependencies \
+    && apk del --no-cache --purge .build-dependencies \
     && rm -f -r /etc/nginx
 
 # Copy root filesystem
