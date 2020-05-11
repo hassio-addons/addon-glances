@@ -120,6 +120,11 @@ The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
+### Option: `history_size`
+
+If specified changes the time Glances will retain data.  Default if not set is
+28800: 1 day with 1 point every 3 seconds.
+
 ### Option group `influxdb`
 
 ---

@@ -51,6 +51,7 @@
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
+    "history_size": "int?",
     "influxdb": {
       "enabled": "bool",
       "host": "str",

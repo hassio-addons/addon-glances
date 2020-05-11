@@ -17,6 +17,13 @@ else
     cp /etc/glances.conf /config/glances/
 fi
 
+# Set History Size
+history_size=28800
+  if bashio::config.exists 'history_size'; then
+    history_size=$(bashio::config 'history_size')
+  fi
+sed -i "s#history_size=28800#history_size=${history_size}#g" /etc/glances.conf
+
 # Export Glances data to InfluxDB
 if bashio::config.true 'influxdb.enabled'; then
     protocol='http'
