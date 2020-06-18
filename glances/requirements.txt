@@ -6,7 +6,7 @@ netifaces==0.10.9
 paho-mqtt==1.5.0
 psutil==5.7.0
 py-cpuinfo==5.0.0
-requests==2.23.0
+requests==2.24.0
 scandir==1.10.0
 wifi==0.3.8
 zeroconf==0.27.1
