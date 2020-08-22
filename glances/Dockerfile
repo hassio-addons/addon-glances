@@ -16,13 +16,13 @@ RUN \
         gcc=9.3.0-r2 \
         linux-headers=5.4.5-r1 \
         musl-dev=1.1.24-r9 \
-        python3-dev=3.8.2-r0 \
+        python3-dev=3.8.5-r0 \
     \
     && apk add --no-cache \
         lua-resty-http=0.15-r0 \
         nginx-mod-http-lua=1.16.1-r6 \
         nginx=1.16.1-r6 \
-        python3=3.8.2-r0 \
+        python3=3.8.5-r0 \
     \
     && pip3 install \
         --no-cache-dir \
