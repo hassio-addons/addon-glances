@@ -22,12 +22,13 @@ RUN \
         lua-resty-http=0.15-r0 \
         nginx-mod-http-lua=1.18.0-r0 \
         nginx=1.18.0-r0 \
+        py3-pip=20.1.1-r0 \
         python3=3.8.5-r0 \
     \
     && pip3 install \
         --no-cache-dir \
         --prefer-binary \
-        --find-links "https://wheels.home-assistant.io/alpine-3.11/${BUILD_ARCH}/" \
+        --find-links "https://wheels.home-assistant.io/alpine-3.12/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && find /usr/local \
