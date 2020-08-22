@@ -14,7 +14,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         automake=1.16.2-r0 \
         gcc=9.3.0-r2 \
-        linux-headers=4.19.36-r0 \
+        linux-headers=5.4.5-r1 \
         musl-dev=1.1.24-r2 \
         python3-dev=3.8.2-r0 \
     \
