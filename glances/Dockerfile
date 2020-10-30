@@ -20,8 +20,8 @@ RUN \
     \
     && apk add --no-cache \
         lua-resty-http=0.15-r0 \
-        nginx-mod-http-lua=1.18.0-r0 \
-        nginx=1.18.0-r0 \
+        nginx-mod-http-lua=1.18.0-r1 \
+        nginx=1.18.0-r1 \
         py3-pip=20.1.1-r0 \
         python3=3.8.5-r0 \
     \
