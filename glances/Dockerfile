@@ -20,7 +20,7 @@ RUN \
     \
     && apk add --no-cache \
         nginx=1.18.0-r13 \
-        py3-pip=20.3.3-r0 \
+        py3-pip=20.3.4-r0 \
         python3=3.8.7-r0 \
     \
     && pip3 install \
