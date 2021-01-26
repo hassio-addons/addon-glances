@@ -3,7 +3,7 @@ docker==4.4.1
 glances==3.1.5
 influxdb==5.3.1
 netifaces==0.10.9
-paho-mqtt==1.5.0
+paho-mqtt==1.5.1
 psutil==5.8.0
 py-cpuinfo==7.0.0
 requests==2.25.1
