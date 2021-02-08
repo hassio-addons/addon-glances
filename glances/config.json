@@ -16,7 +16,7 @@
   "ports_description": {
     "80/tcp": "Web interface (Not required for Ingress)"
   },
-  "map": ["addons", "backup", "config:rw", "share", "ssl"],
+  "map": ["addons", "backup", "config:rw", "share", "ssl", "media"],
   "hassio_api": true,
   "auth_api": true,
   "docker_api": true,
