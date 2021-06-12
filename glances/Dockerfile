@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,11 +15,11 @@ RUN \
         automake=1.16.3-r0 \
         gcc=10.2.1_pre1-r3 \
         linux-headers=5.7.8-r0 \
-        musl-dev=1.2.2-r0 \
+        musl-dev=1.2.2-r1 \
         python3-dev=3.8.10-r0 \
     \
     && apk add --no-cache \
-        nginx=1.18.0-r14 \
+        nginx=1.18.0-r15 \
         py3-pip=20.3.4-r0 \
         python3=3.8.10-r0 \
     \
