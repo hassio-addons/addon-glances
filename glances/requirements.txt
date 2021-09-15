@@ -9,4 +9,4 @@ py-cpuinfo==8.0.0
 requests==2.26.0
 scandir==1.10.0
 wifi==0.3.8
-zeroconf==0.36.0
+zeroconf==0.36.3
