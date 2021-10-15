@@ -41,6 +41,15 @@ influxdb:
   prefix: localhost
   interval: 60
   ssl: false
+influxdb2:
+  enabled: false
+  host: my.influxdb.host
+  port: 8086
+  token: "!secret glances_influxdbv2_token"
+  bucket: glances
+  org: myorg
+  interval: 60
+  ssl: false
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -142,6 +151,57 @@ The hostname to append for exported data.
 Defines the interval (in seconds) on how often Glances exports data to InfluxDB.
 
 #### Option `influxdb`: `ssl`
+
+Adding this option will allow SSL to be used on the InfluxDB connection. If not
+set will default to `false` which is the required setting for the Community
+InfluxDB add-on.
+
+### Option group `influxdb2`
+
+These options apply to data export to an InfluxDB v2.x database.
+
+---
+
+The following options are for the option group: `influxdb2`. These settings
+only apply to the Glances InfluxDB v2.x data export.
+
+#### Option `influxdb2`: `enabled`
+
+Enables/Disables the Glances data export to InfluxDB.
+
+#### Option `influxdb2`: `host`
+
+The hostname where InfluxDB is running.
+
+#### Option `influxdb2`: `port`
+
+The port on which InfluxDB is listening.
+
+#### Option `influxdb2`: `token`
+
+An InfluxDB token with permissions to write to the given bucket. This should
+look like `t9iHPiGQyg0ds4K1IlBrCyBsNGh71dkdR6u8Y9eeR37UzfGuFukFCdbMI4YA9EtKb4zr5coFXKw67tbBEP7CPw==`
+
+#### Option `influxdb2`: `bucket`
+
+The name of the bucket to store all Glances information into.
+
+**Note**: _It is strongly recommended to create a separate bucket for glances
+and not store this in the same bucket as Home Assistant._
+
+#### Option `influxdb2`: `organization`
+
+The InfluxDB organization that owns the given bucket.
+
+#### Option `prefix`: `localhost`
+
+The hostname to append for exported data.
+
+#### Option `influxdb2`: `interval`
+
+Defines the interval (in seconds) on how often Glances exports data to InfluxDB.
+
+#### Option `influxdb2`: `ssl`
 
 Adding this option will allow SSL to be used on the InfluxDB connection. If not
 set will default to `false` which is the required setting for the Community

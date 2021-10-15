@@ -5,27 +5,40 @@
 # ==============================================================================
 declare -a options
 
-if bashio::config.false 'influxdb.enabled'; then
+if bashio::config.false 'influxdb.enabled' && bashio::config.false 'influxdb2.enabled'; then
+    # This script is re-run by systemd whenever it terminates, so sleep for a
+    # while to avoid a continual loop.
     exec sleep 86400
 fi
 
-options+=(-C /etc/glances.conf)
-options+=(--export influxdb)
-options+=(--quiet)
+function glances_export() {
+    influxdb_version="$1"
+    sleep_interval="$2"
 
-options+=(--time "$(bashio::config 'refresh_time')")
+    options+=(-C /etc/glances.conf)
+    options+=(--export "$influxdb_version")
+    options+=(--quiet)
 
-if bashio::config.false 'process_info'; then
-    options+=(--disable-process)
+    options+=(--time "$(bashio::config 'refresh_time')")
+
+    if bashio::config.false 'process_info'; then
+        options+=(--disable-process)
+    fi
+
+    if bashio::debug; then
+        options+=(--debug)
+    fi
+
+    sleep "$sleep_interval"
+    glances "${options[@]}"
+}
+
+# Run the export processes in the background, then wait for both to complete
+# (otherwise we delay one export by the other's interval).
+if bashio::config.true 'influxdb.enabled'; then
+    glances_export "influxdb" "$(bashio::config 'influxdb.interval')" &
 fi
-
-if bashio::debug; then
-    options+=(--debug)
+if bashio::config.true 'influxdb2.enabled'; then
+    glances_export "influxdb2" "$(bashio::config 'influxdb2.interval')" &
 fi
-
-# Interval
-sleep "$(bashio::config 'influxdb.interval')"
-
-# Run Glances
-exec glances "${options[@]}"
-
+wait
