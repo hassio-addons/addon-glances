@@ -158,7 +158,7 @@ and even build automations based on that data.
 Set up the integration through **Configuration -> Integrations -> Glances**.
 
 **Note**: _Once the add-on is running, add the integration with all
-defaults, except for port, which should be 61209_
+defaults, except for your HA login credentials and port, which should be 61209_
 
 More information about the Glances sensor platform can be found in the
 Home Assistant documentation:
