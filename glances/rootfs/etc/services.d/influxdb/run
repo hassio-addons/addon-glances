@@ -29,5 +29,5 @@ do
     sleep "$(bashio::config 'influxdb.interval')"
 
     # Run Glances
-    exec glances "${options[@]}"
+    glances "${options[@]}"
 done
