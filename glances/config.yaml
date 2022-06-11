@@ -10,7 +10,6 @@ ingress_port: 0
 ingress_stream: true
 panel_icon: mdi:speedometer
 startup: services
-init: true
 homeassistant: 0.92.0b2
 arch:
   - aarch64
