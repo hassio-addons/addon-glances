@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bashio
 # ==============================================================================
 # Home Assistant Community Add-on: Glances
 # Runs Glances InfluxDB Export
@@ -6,7 +6,7 @@
 declare -a options
 
 if bashio::config.false 'influxdb.enabled'; then
-    exec sleep 86400
+    bashio::exit.ok
 fi
 
 options+=(-C /etc/glances.conf)
@@ -23,9 +23,11 @@ if bashio::debug; then
     options+=(--debug)
 fi
 
-# Interval
-sleep "$(bashio::config 'influxdb.interval')"
+while true
+do
+    # Interval
+    sleep "$(bashio::config 'influxdb.interval')"
 
-# Run Glances
-exec glances "${options[@]}"
-
+    # Run Glances
+    glances "${options[@]}"
+done
