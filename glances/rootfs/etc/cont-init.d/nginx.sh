@@ -1,7 +1,7 @@
 #!/usr/bin/env bashio
 # ==============================================================================
-# Home Assistant Community Add-on: SSH & Web Terminal
-# Configures NGINX for use with ttyd
+# Home Assistant Community Add-on: Glances
+# Configures NGINX for use with Glances
 # ==============================================================================
 
 # Generate Ingress configuration
