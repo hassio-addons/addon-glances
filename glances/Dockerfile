@@ -14,6 +14,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
         py3-pip=22.1.1-r0 \
+        python3-dev=3.10.5-r0 \
     \
     && apk add --no-cache \
         nginx=1.22.0-r1 \
