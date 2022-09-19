@@ -12,7 +12,7 @@ COPY requirements.txt /tmp/
 # hadolint ignore=DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc=11.2.1_git20220219-r2 \
+        build-base=0.5-r3 \
         py3-pip=22.1.1-r0 \
     \
     && apk add --no-cache \
