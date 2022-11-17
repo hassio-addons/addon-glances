@@ -10,3 +10,4 @@ requests==2.28.1
 scandir==1.10.0
 wifi==0.3.8
 zeroconf==0.39.4
+six==1.16.0
