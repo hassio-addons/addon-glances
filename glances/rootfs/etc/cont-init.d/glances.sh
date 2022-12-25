@@ -3,7 +3,7 @@
 # Home Assistant Community Add-on: Glances
 # Configures Glances
 # ==============================================================================
-declare protocol
+declare header protocol
 bashio::require.unprotected
 
 # Ensure the configuration exists
@@ -23,15 +23,32 @@ if bashio::config.true 'influxdb.enabled'; then
     if bashio::config.true 'influxdb.ssl'; then
     protocol='https'
     fi
+
+    header='influxdb'
+    if bashio::config.equals 'influxdb.version' '2'; then
+    header='influxdb2'
+    fi
+
     # Modify the configuration
     {
-        echo "[influxdb]"
+        echo "[${header}]"
+        echo "protocol=${protocol}"
         echo "host=$(bashio::config 'influxdb.host')"
         echo "port=$(bashio::config 'influxdb.port')"
-        echo "user=$(bashio::config 'influxdb.username')"
-        echo "password=$(bashio::config 'influxdb.password')"
-        echo "db=$(bashio::config 'influxdb.database')"
         echo "prefix=$(bashio::config 'influxdb.prefix')"
-        echo "protocol=${protocol}"
     } >> /etc/glances.conf
+
+    if bashio::config.equals 'influxdb.version' '1'; then
+        {
+            echo "user=$(bashio::config 'influxdb.username')"
+            echo "password=$(bashio::config 'influxdb.password')"
+            echo "db=$(bashio::config 'influxdb.database')"
+        } >> /etc/glances.conf
+    elif bashio::config.equals 'influxdb.version' '2'; then
+        {
+            echo "org=$(bashio::config 'influxdb.organization')"
+            echo "bucket=$(bashio::config 'influxdb.bucket')"
+            echo "token=$(bashio::config 'influxdb.token')"
+        } >> /etc/glances.conf
+    fi
 fi

@@ -4,13 +4,20 @@
 # Runs Glances InfluxDB Export
 # ==============================================================================
 declare -a options
+declare exporter
 
 if bashio::config.false 'influxdb.enabled'; then
     bashio::exit.ok
 fi
 
+
+exporter='influxdb'
+if bashio::config.equals 'influxdb.version' '2'; then
+exporter='influxdb2'
+fi
+
 options+=(-C /etc/glances.conf)
-options+=(--export influxdb)
+options+=(--export "${exporter}")
 options+=(--quiet)
 
 options+=(--time "$(bashio::config 'refresh_time')")
