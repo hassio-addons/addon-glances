@@ -185,7 +185,7 @@ The Influxdb2 organization name which contains the Glances bucket.
 
 #### Option `influxdb2`: `token`
 
-The API token with a minimum of write access to the bucket.
+The API token with a minimum of write access to the Glances bucket.
 
 #### Option `influxdb2`: `bucket`
 
