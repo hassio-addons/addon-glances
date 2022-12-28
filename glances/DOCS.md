@@ -45,6 +45,15 @@ influxdb:
   prefix: localhost
   interval: 60
   ssl: false
+influxdb2:
+    enabled: false
+    host: ""
+    port: 8086
+    org: ""
+    token: "!secret glances_influxdb2_token"
+    bucket: glances
+    prefix: localhost
+    interval: 60
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -150,6 +159,54 @@ Defines the interval (in seconds) on how often Glances exports data to InfluxDB.
 Adding this option will allow SSL to be used on the InfluxDB connection. If not
 set will default to `false` which is the required setting for the Community
 InfluxDB add-on.
+
+### Option group `influxdb2`
+
+---
+
+The following options are for the option group: `influxdb2`. These settings
+only apply to the Glances influxdb2 data export.
+
+#### Option `influxdb2`: `enabled`
+
+Enables/Disables the Glances data export to InfluxDB2.
+
+#### Option `influxdb2`: `host`
+
+The hostname where InfluxDB2 is running.
+
+#### Option `influxdb2`: `port`
+
+The port on which InfluxDB2 is listening.
+
+#### Option `influxdb2`: `org`
+
+The Influxdb2 organization name which contains the Glances bucket.
+
+#### Option `influxdb2`: `token`
+
+The API token with a minimum of write access to the bucket.
+
+#### Option `influxdb2`: `bucket`
+
+The name of the bucket to store all Glances information into.
+
+**Note**: _It is strongly recommended to create a separate bucket for glances
+and not store this in the same database name as Home Assistant._
+
+#### Option `prefix`: `localhost`
+
+The hostname to append for exported data.
+
+**Note**: _For the Grafana Glances dashboard set this to `localhost`._
+
+#### Option `influxdb2`: `interval`
+
+Defines the interval (in seconds) on how often Glances exports data to influxdb2.
+
+#### Option `influxdb2`: `ssl`
+
+Adding this option will allow SSL to be used on the influxdb2 connection. If not set will default to `false`.
 
 ## Adding Glances as a sensor into Home Assistant
 
