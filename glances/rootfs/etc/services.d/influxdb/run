@@ -4,6 +4,7 @@
 # Runs Glances InfluxDB Export
 # ==============================================================================
 declare -a options
+declare -i influxdb-interval influxdb2-interval interval
 
 if bashio::config.false 'influxdb.enabled' && bashio::config.false 'influxdb2.enabled'; then
     bashio::exit.ok
@@ -29,10 +30,25 @@ if bashio::debug; then
     options+=(--debug)
 fi
 
+# get whichever interval is set or if both influxdb and influxdb2 take the larger
+if bashio::config.true 'influxdb.enabled'; then
+    influxdb_interval="$(bashio::config 'influxdb.interval')"
+fi
+
+if bashio::config.true 'influxdb2.enabled'; then
+    influxdb2_interval="$(bashio::config 'influxdb2.interval')"
+fi
+
+if (( ${influxdb_interval:-0} > ${influxdb2_interval:-0} )); then
+  interval=${influxdb_interval}
+else
+  interval=${influxdb2_interval}
+fi
+
 while true
 do
     # Interval
-    sleep "$(bashio::config 'influxdb.interval')"
+    sleep "${interval}"
 
     # Run Glances
     glances "${options[@]}"
