@@ -10,8 +10,13 @@ if bashio::config.false 'influxdb.enabled'; then
 fi
 
 options+=(-C /etc/glances.conf)
-options+=(--export influxdb)
 options+=(--quiet)
+
+if bashio::config.equals 'influxdb.version' '2'; then
+    options+=(--export influxdb2)
+else
+    options+=(--export influxdb)
+fi
 
 options+=(--time "$(bashio::config 'refresh_time')")
 

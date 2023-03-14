@@ -45,11 +45,16 @@ options:
     enabled: false
     host: a0d7b954-influxdb
     port: 8086
+    interval: 60
+    ssl: false
+    version: 1
     username: glances
     password: ""
     database: glances
     prefix: localhost
-    interval: 60
+    token: ""
+    bucket: glances
+    org: myorg
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
   process_info: bool

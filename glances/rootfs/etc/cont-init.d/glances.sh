@@ -21,17 +21,30 @@ fi
 if bashio::config.true 'influxdb.enabled'; then
     protocol='http'
     if bashio::config.true 'influxdb.ssl'; then
-    protocol='https'
+        protocol='https'
     fi
+
     # Modify the configuration
+    if bashio::config.equals 'influxdb.version' '1'; then
+        {
+            echo "[influxb]"
+            echo "user=$(bashio::config 'influxdb.username')"
+            echo "password=$(bashio::config 'influxdb.password')"
+            echo "db=$(bashio::config 'influxdb.database')"
+        } >> /etc/glances.conf
+    elif bashio::config.equals 'influxdb.version' '2'; then
+        {
+            echo "[influxb2]"
+            echo "org=$(bashio::config 'influxdb.organization')"
+            echo "bucket=$(bashio::config 'influxdb.bucket')"
+            echo "token=$(bashio::config 'influxdb.token')"
+        } >> /etc/glances.conf
+    fi
+
     {
-        echo "[influxdb]"
+        echo "protocol=${protocol}"
         echo "host=$(bashio::config 'influxdb.host')"
         echo "port=$(bashio::config 'influxdb.port')"
-        echo "user=$(bashio::config 'influxdb.username')"
-        echo "password=$(bashio::config 'influxdb.password')"
-        echo "db=$(bashio::config 'influxdb.database')"
         echo "prefix=$(bashio::config 'influxdb.prefix')"
-        echo "protocol=${protocol}"
     } >> /etc/glances.conf
 fi
