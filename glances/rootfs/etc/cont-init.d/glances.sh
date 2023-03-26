@@ -27,15 +27,16 @@ if bashio::config.true 'influxdb.enabled'; then
     # Modify the configuration
     if bashio::config.equals 'influxdb.version' '1'; then
         {
-            echo "[influxb]"
+            echo "[influxdb]"
             echo "user=$(bashio::config 'influxdb.username')"
             echo "password=$(bashio::config 'influxdb.password')"
             echo "db=$(bashio::config 'influxdb.database')"
+            echo "prefix=$(bashio::config 'influxdb.prefix')"
         } >> /etc/glances.conf
     elif bashio::config.equals 'influxdb.version' '2'; then
         {
-            echo "[influxb2]"
-            echo "org=$(bashio::config 'influxdb.organization')"
+            echo "[influxdb 2]"
+            echo "org=$(bashio::config 'influxdb.org')"
             echo "bucket=$(bashio::config 'influxdb.bucket')"
             echo "token=$(bashio::config 'influxdb.token')"
         } >> /etc/glances.conf
@@ -45,6 +46,5 @@ if bashio::config.true 'influxdb.enabled'; then
         echo "protocol=${protocol}"
         echo "host=$(bashio::config 'influxdb.host')"
         echo "port=$(bashio::config 'influxdb.port')"
-        echo "prefix=$(bashio::config 'influxdb.prefix')"
     } >> /etc/glances.conf
 fi
