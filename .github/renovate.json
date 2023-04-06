@@ -54,6 +54,12 @@
       "matchManagers": ["pip_requirements"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "groupName": "Python",
+      "matchDatasources": ["repology"],
+      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
+      "automerge": true
     }
   ]
 }
