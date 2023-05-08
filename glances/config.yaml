@@ -64,11 +64,11 @@ schema:
     enabled: bool
     host: str
     port: port
-    username: str
-    password: password
-    database: str
+    username: str?
+    password: password?
+    database: str?
     org: str?
-    prefix: str
+    prefix: str?
     interval: int
     ssl: bool?
     token: str?
