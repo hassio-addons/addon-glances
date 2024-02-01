@@ -17,7 +17,7 @@ RUN \
         python3-dev=3.11.6-r1 \
     \
     && apk add --no-cache \
-        nginx=1.24.0-r14 \
+        nginx=1.24.0-r15 \
         py3-packaging=23.2-r0 \
         py3-six=1.16.0-r8 \
         python3=3.11.6-r1 \
