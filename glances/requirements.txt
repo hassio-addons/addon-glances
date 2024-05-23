@@ -1,5 +1,5 @@
 bottle==0.12.25
-docker==7.0.0
+docker==7.1.0
 glances==3.4.0.5
 influxdb==5.3.2
 influxdb-client==1.42.0
