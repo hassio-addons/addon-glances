@@ -5,8 +5,9 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -16,6 +17,7 @@
       "datasourceTemplate": "docker"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -58,8 +60,8 @@
     {
       "groupName": "Python",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^alpine_.*/python3(-dev)?$/"]
     }
   ]
 }
