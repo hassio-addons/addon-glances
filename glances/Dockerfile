@@ -13,12 +13,12 @@ COPY requirements.txt /tmp/
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        py3-pip=24.0-r2 \
+        py3-pip=24.3.1-r0 \
         python3-dev=3.12.8-r0 \
     \
     && apk add --no-cache \
-        nginx=1.26.2-r0 \
-        py3-packaging=24.0-r1 \
+        nginx=1.26.2-r3 \
+        py3-packaging=24.2-r0 \
         py3-six=1.16.0-r9 \
         python3=3.12.8-r0 \
     \
