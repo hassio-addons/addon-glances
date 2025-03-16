@@ -13,6 +13,8 @@ if ! bashio::fs.file_exists '/config/glances.conf' \
     shopt -s dotglob
     mv /homeassistant/glances/* /config/ \
         || bashio::exit.nok "Failed to migrate Glances configuration out of Home Assistant config directory"
+    rmdir /homeassistant/glances \
+        || bashio::log.warning "Failed to remove Glances configuration directory from Home Assistant config directory"
 fi
 
 # Ensure the configuration exists
