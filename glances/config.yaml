@@ -22,10 +22,11 @@ ports_description:
 map:
   - addons
   - backup
-  - config:rw
+  - addon_config:rw
   - share
   - ssl
   - media
+  - homeassistant_config:rw # to enable migration to addon_config
 hassio_api: true
 auth_api: true
 docker_api: true
