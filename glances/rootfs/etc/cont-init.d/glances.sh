@@ -8,13 +8,10 @@ bashio::require.unprotected
 
 # Migrate add-on data from the Home Assistant config directory,
 # to the add-on configuration directory.
-if ! bashio::fs.file_exists '/config/glances.conf' \
+if ! bashio::fs.file_exists '/config/glances/glances.conf' \
     && bashio::fs.file_exists '/homeassistant/glances/glances.conf'; then
-    shopt -s dotglob
-    mv /homeassistant/glances/* /config/ \
+    mv /homeassistant/glances /config/ \
         || bashio::exit.nok "Failed to migrate Glances configuration out of Home Assistant config directory"
-    rmdir /homeassistant/glances \
-        || bashio::log.warning "Failed to remove Glances configuration directory from Home Assistant config directory"
 fi
 
 # Ensure the configuration exists
