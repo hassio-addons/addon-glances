@@ -9,4 +9,4 @@ psutil==7.0.0
 py-cpuinfo==9.0.0
 requests==2.32.3
 scandir==1.10.0
-zeroconf==0.146.3
+zeroconf==0.146.4
