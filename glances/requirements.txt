@@ -1,4 +1,4 @@
-bottle==0.13.3
+bottle==0.13.4
 docker==7.1.0
 glances==4.3.1
 influxdb==5.3.2
