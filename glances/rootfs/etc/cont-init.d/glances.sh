@@ -6,6 +6,14 @@
 declare protocol
 bashio::require.unprotected
 
+# Migrate add-on data from the Home Assistant config directory,
+# to the add-on configuration directory.
+if ! bashio::fs.file_exists '/config/glances/glances.conf' \
+    && bashio::fs.file_exists '/homeassistant/glances/glances.conf'; then
+    mv /homeassistant/glances /config/ \
+        || bashio::exit.nok "Failed to migrate Glances configuration out of Home Assistant config directory"
+fi
+
 # Ensure the configuration exists
 if bashio::fs.file_exists '/config/glances/glances.conf'; then
     cp -f /config/glances/glances.conf /etc/glances.conf
