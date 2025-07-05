@@ -26,7 +26,7 @@ map:
   - share
   - ssl
   - media
-  - homeassistant_config:rw # to enable migration to addon_config
+  - homeassistant_config:rw
 hassio_api: true
 auth_api: true
 docker_api: true
